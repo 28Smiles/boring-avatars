@@ -1,0 +1,37 @@
+name: tagged-release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: ng build
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+      - name: Pack Artifacts
+        run: mkdir staging; cd dist; zip -r ../staging/ngx-boring-avatars.zip *; tar -cvzf ../staging/ngx-boring-avatars.tar.gz *; cd ..
+      - uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            dist/*
+            LICENSE
+            README.md
+      - uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: staging
