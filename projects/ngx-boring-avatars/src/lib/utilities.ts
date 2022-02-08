@@ -5,6 +5,7 @@ export const hashCode = (name: string) => {
     hash = ((hash << 5) - hash) + character;
     hash = hash & hash; // Convert to 32bit integer
   }
+
   return Math.abs(hash);
 }
 
@@ -17,7 +18,7 @@ export const getDigit = (number: number, ntn: number) => {
 }
 
 export const getBoolean = (number: number, ntn: number) => {
-  return (!((getDigit(number, ntn)) % 2))
+  return !((getDigit(number, ntn)) % 2);
 }
 
 export const getAngle = (x: number, y: number) => {
@@ -25,11 +26,13 @@ export const getAngle = (x: number, y: number) => {
 }
 
 export const getUnit = (number: number, range: number, index?: number) => {
-  let value = number % range
+  const value = number % range
 
   if (index && ((getDigit(number, index) % 2) === 0)) {
-    return -value
-  } else return value
+    return -value;
+  } else {
+    return value;
+  }
 }
 
 export const getRandomColor = (number: number, colors: string[], range: number) => {
