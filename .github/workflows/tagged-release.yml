@@ -19,7 +19,7 @@ jobs:
         run: npm install
       - name: Build
         run: ng build
-      - uses: JS-DevTools/npm-publish@v1qq
+      - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: dist/ngx-boring-avatars/package.json
