@@ -11,12 +11,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: ng build
+        run: npm run-script build
       - name: Pack Artifacts
         run: mkdir staging; cd dist; zip -r ../staging/ngx-boring-avatars.zip *; tar -cvzf ../staging/ngx-boring-avatars.tar.gz *;
       - uses: actions/upload-artifact@v2

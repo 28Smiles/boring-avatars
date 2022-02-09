@@ -13,12 +13,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
       - name: Install Dependencies
         run: npm install
       - name: Build
-        run: ng build
+        run: npm run-script build
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
