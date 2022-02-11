@@ -14,7 +14,7 @@ import {getRandomColor, hashCode} from "./utilities";
     >
       <title>{{ name }}</title>
       <mask
-        [id]="'mask__beam_' + size + '_' + square"
+        [id]="'mask__ring_' + size + '_' + square"
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"
@@ -23,7 +23,7 @@ import {getRandomColor, hashCode} from "./utilities";
       >
         <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
       </mask>
-      <g [attr.mask]="'url(#mask__beam_' + size + '_' + square + ')'">
+      <g [attr.mask]="'url(#mask__ring_' + size + '_' + square + ')'">
         <path d="M0 0h90v45H0z" [attr.fill]="properties[0]" />
         <path d="M0 45h90v45H0z" [attr.fill]="properties[1]" />
         <path d="M83 45a38 38 0 00-76 0h76z" [attr.fill]="properties[2]" />

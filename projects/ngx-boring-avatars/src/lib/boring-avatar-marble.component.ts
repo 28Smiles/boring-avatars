@@ -22,7 +22,7 @@ interface MarbleAvatar {
     >
       <title>{{ name }}</title>
       <mask
-        [id]="'mask__beam_' + size + '_' + square"
+        [id]="'mask__marble_' + size + '_' + square"
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"
@@ -31,7 +31,7 @@ interface MarbleAvatar {
       >
         <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
       </mask>
-      <g [attr.mask]="'url(#mask__beam_' + size + '_' + square + ')'">
+      <g [attr.mask]="'url(#mask__marble_' + size + '_' + square + ')'">
         <rect [attr.width]="size" [attr.height]="size" [attr.fill]="properties[0].color"/>
         <path
           filter="url(#prefix__filter0_f)"

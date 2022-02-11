@@ -14,7 +14,7 @@ import {getRandomColor, hashCode} from "./utilities";
     >
       <title>{{ name }}</title>
       <mask
-        [id]="'mask__beam_' + size + '_' + square"
+        [id]="'mask__sunset_' + size + '_' + square"
         maskUnits="userSpaceOnUse"
         x="0"
         y="0"
@@ -23,7 +23,7 @@ import {getRandomColor, hashCode} from "./utilities";
       >
         <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
       </mask>
-      <g [attr.mask]="'url(#mask__beam_' + size + '_' + square + ')'">
+      <g [attr.mask]="'url(#mask__sunset_' + size + '_' + square + ')'">
         <path [attr.fill]="'url(#gradient_paint0_linear_' + name + '_' + size + '_' + square + ')'" d="M0 0h80v40H0z" />
         <path [attr.fill]="'url(#gradient_paint1_linear_' + name + '_' + size + '_' + square + ')'" d="M0 40h80v40H0z" />
       </g>
