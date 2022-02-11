@@ -1,5 +1,4 @@
 import {ComponentFixture, TestBed} from "@angular/core/testing";
-import {unmountComponentAtNode} from "react-dom";
 import * as React from "react";
 import Avatar from "boring-avatars";
 import {render} from "@testing-library/react";

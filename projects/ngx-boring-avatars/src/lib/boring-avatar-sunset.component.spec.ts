@@ -1,7 +1,6 @@
 import {ComponentFixture, TestBed} from "@angular/core/testing";
 import Avatar from "boring-avatars";
 import {BoringAvatarSunsetComponent} from "./boring-avatar-sunset.component";
-import {unmountComponentAtNode} from "react-dom";
 import {render} from "@testing-library/react";
 import * as React from "react";
 
