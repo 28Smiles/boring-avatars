@@ -24,7 +24,7 @@ import {getRandomColor, hashCode} from "./utilities";
         <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
       </mask>
       <g [attr.mask]="'url(#mask__pixel_' + size + '_' + square + ')'">
-        <rect [attr.width]="size" [attr.height]="size" [attr.fill]="properties[0]"/>
+        <rect width="10" height="10" [attr.fill]="properties[0]"/>
         <rect x="20" width="10" height="10" [attr.fill]="properties[1]" />
         <rect x="40" width="10" height="10" [attr.fill]="properties[2]" />
         <rect x="60" width="10" height="10" [attr.fill]="properties[3]" />
