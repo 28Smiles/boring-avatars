@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from "@angular/core";
 import {getRandomColor, hashCode} from "./utilities";
 
 @Component({
@@ -60,7 +60,7 @@ export class BoringAvatarSunsetComponent implements OnInit {
   @Input() elements: number = 4;
   @Input() width: number = 80;
   @Input() square: number | undefined;
-  @Input() colors: string[] = ['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90'];
+  @Input() colors: string[] = ["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"];
 
   properties: string[] = [];
 
@@ -75,5 +75,12 @@ export class BoringAvatarSunsetComponent implements OnInit {
 
   ngOnInit(): void {
     this.properties = this.generateColors(this.name, this.colors);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes["name"].currentValue !== changes["name"].previousValue
+      || changes["colors"].currentValue !== changes["colors"].previousValue) {
+      this.properties = this.generateColors(this.name, this.colors);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule} from "@angular/core";
 import {BoringAvatarPixelComponent} from "./boring-avatar-pixel.component";
 
 

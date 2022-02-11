@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {getBoolean, getRandomColor, getUnit, hashCode} from "./utilities";
 
 interface BauhausAvatar {
@@ -13,12 +13,12 @@ interface BauhausAvatar {
   selector: "ngx-boring-avatar-bauhaus",
   template: `
     <svg
-        [attr.viewBox]="'0 0 ' + size + ' ' + size"
-        fill="none"
-        role="img"
-        xmlns="http://www.w3.org/2000/svg"
-        [attr.width]="width"
-        [attr.height]="width"
+      [attr.viewBox]="'0 0 ' + size + ' ' + size"
+      fill="none"
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      [attr.width]="width"
+      [attr.height]="width"
     >
       <title>{{ name }}</title>
       <mask
@@ -29,7 +29,8 @@ interface BauhausAvatar {
         [attr.width]="size"
         [attr.height]="size"
       >
-        <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
+        <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square"
+              fill="#fff"></rect>
       </mask>
       <g [attr.mask]="'url(#mask__bauhaus_' + size + '_' + square + ')'">
         <rect [attr.width]="size" [attr.height]="size" [attr.fill]="properties[0].color"/>
@@ -48,27 +49,26 @@ interface BauhausAvatar {
           [attr.transform]="'translate(' + properties[2].translateX + ' ' + properties[2].translateY + ')'"
         />
         <line
-            x1="0"
-            [attr.y1]="size / 2"
-            [attr.x2]="size"
-            [attr.y2]="size / 2"
-            stroke-width="2"
-            [attr.stroke]="properties[3].color"
-            [attr.transform]="'translate(' + properties[3].translateX + ' ' + properties[3].translateY + ') rotate(' + properties[3].rotate + ' ' + (size / 2) + ' ' + (size / 2) + ')'"
+          x1="0"
+          [attr.y1]="size / 2"
+          [attr.x2]="size"
+          [attr.y2]="size / 2"
+          stroke-width="2"
+          [attr.stroke]="properties[3].color"
+          [attr.transform]="'translate(' + properties[3].translateX + ' ' + properties[3].translateY + ') rotate(' + properties[3].rotate + ' ' + (size / 2) + ' ' + (size / 2) + ')'"
         />
       </g>
     </svg>
   `,
-  styles: [
-  ]
+  styles: []
 })
-export class BoringAvatarBauhausComponent implements OnInit {
+export class BoringAvatarBauhausComponent implements OnInit, OnChanges {
   @Input() name: string = "Default";
   @Input() size: number = 80;
   @Input() width: number = 80;
   @Input() elements: number = 4;
   @Input() square: number | undefined;
-  @Input() colors: string[] = ['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90'];
+  @Input() colors: string[] = ["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"];
 
   properties: BauhausAvatar[] = [];
 
@@ -87,5 +87,12 @@ export class BoringAvatarBauhausComponent implements OnInit {
 
   ngOnInit(): void {
     this.properties = this.generateColors(this.name, this.colors);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      if (changes["name"].currentValue !== changes["name"].previousValue
+        || changes["colors"].currentValue !== changes["colors"].previousValue) {
+          this.properties = this.generateColors(this.name, this.colors);
+      }
   }
 }

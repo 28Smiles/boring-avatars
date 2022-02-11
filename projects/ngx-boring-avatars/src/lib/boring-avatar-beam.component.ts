@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from "@angular/core";
 import {getBoolean, getContrast, getRandomColor, getUnit, hashCode} from "./utilities";
 
 interface BeamAvatar {
@@ -85,7 +85,7 @@ export class BoringAvatarBeamComponent implements OnInit {
   @Input() size: number = 36;
   @Input() width: number = 80;
   @Input() square: number | undefined;
-  @Input() colors: string[] = ['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90'];
+  @Input() colors: string[] = ["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"];
 
   properties: BeamAvatar | undefined = undefined;
 
@@ -120,5 +120,12 @@ export class BoringAvatarBeamComponent implements OnInit {
 
   ngOnInit(): void {
     this.properties = this.generateData(this.name, this.colors);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes["name"].currentValue !== changes["name"].previousValue
+      || changes["colors"].currentValue !== changes["colors"].previousValue) {
+      this.properties = this.generateData(this.name, this.colors);
+    }
   }
 }
