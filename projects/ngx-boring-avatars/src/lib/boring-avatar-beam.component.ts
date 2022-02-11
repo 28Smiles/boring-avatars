@@ -38,7 +38,10 @@ interface BeamAvatar {
         [attr.width]="size"
         [attr.height]="size"
       >
-        <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
+        <rect [attr.width]="size"
+              [attr.height]="size"
+              [attr.rx]="square === undefined ? size * 2 : (square === 0 ? undefined : square)"
+              fill="#fff"/>
       </mask>
       <g [attr.mask]="'url(#mask__beam_' + size + '_' + square + ')'">
         <rect [attr.width]="size" [attr.height]="size" [attr.fill]="properties?.backgroundColor"/>
@@ -49,13 +52,13 @@ interface BeamAvatar {
           [attr.height]="size"
           [attr.transform]="'translate(' + properties?.wrapperTranslateX + ' ' + properties?.wrapperTranslateY + ') rotate(' + properties?.wrapperRotate + ' ' + (size / 2) + ' ' + (size / 2) + ') scale(' + properties?.wrapperScale + ')'"
           [attr.fill]="properties?.wrapperColor"
-          [attr.rx]="size"/>
+          [attr.rx]="properties?.isCircle ? size : size / 6"/>
         <g [attr.transform]="'translate(' + properties?.faceTranslateX + ' ' + properties?.faceTranslateY + ') rotate(' + properties?.faceRotate + ' ' + (size / 2) + ' ' + (size / 2) + ')'">
           <path
-            [attr.d]="properties?.isMouthOpen ? 'M15 ' + (19 + (properties?.mouthSpread ?? 0)) + 'c2 1 4 1 6 0' : 'M13 ' + (19 + (properties?.mouthSpread ?? 0)) + ' a1,0.75 0 0,0 10,0'"
+            [attr.d]="properties?.isMouthOpen ? 'M15 ' + (19 + (properties?.mouthSpread ?? 0)) + 'c2 1 4 1 6 0' : 'M13,' + (19 + (properties?.mouthSpread ?? 0)) + ' a1,0.75 0 0,0 10,0'"
             [attr.stroke]="properties?.faceColor"
             [attr.fill]="properties?.isMouthOpen ? 'none' : properties?.faceColor"
-            [attr.stroke-linecap]="properties?.isMouthOpen ? 'round' : 'inherit'"
+            [attr.stroke-linecap]="properties?.isMouthOpen ? 'round' : undefined"
           />
           <rect
             [attr.x]="14 - (properties?.eyeSpread ?? 0)"

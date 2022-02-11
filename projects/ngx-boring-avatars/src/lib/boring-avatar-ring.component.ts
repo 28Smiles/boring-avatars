@@ -21,7 +21,10 @@ import {getRandomColor, hashCode} from "./utilities";
         [attr.width]="size"
         [attr.height]="size"
       >
-        <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
+        <rect [attr.width]="size"
+              [attr.height]="size"
+              [attr.rx]="square === undefined ? size * 2 : (square === 0 ? undefined : square)"
+              fill="#fff"/>
       </mask>
       <g [attr.mask]="'url(#mask__ring_' + size + '_' + square + ')'">
         <path d="M0 0h90v45H0z" [attr.fill]="properties[0]" />

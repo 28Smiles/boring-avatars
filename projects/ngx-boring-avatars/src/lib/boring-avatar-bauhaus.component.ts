@@ -29,8 +29,10 @@ interface BauhausAvatar {
         [attr.width]="size"
         [attr.height]="size"
       >
-        <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square"
-              fill="#fff"></rect>
+        <rect [attr.width]="size"
+              [attr.height]="size"
+              [attr.rx]="square === undefined ? size * 2 : (square === 0 ? undefined : square)"
+              fill="#fff"/>
       </mask>
       <g [attr.mask]="'url(#mask__bauhaus_' + size + '_' + square + ')'">
         <rect [attr.width]="size" [attr.height]="size" [attr.fill]="properties[0].color"/>

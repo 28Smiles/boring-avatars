@@ -21,7 +21,10 @@ import {getRandomColor, hashCode} from "./utilities";
         [attr.width]="size"
         [attr.height]="size"
       >
-        <rect [attr.width]="size" [attr.height]="size" [attr.rx]="square == undefined ? size * 2 : square" fill="#fff"></rect>
+        <rect [attr.width]="size"
+              [attr.height]="size"
+              [attr.rx]="square === undefined ? size * 2 : (square === 0 ? undefined : square)"
+              fill="#fff"/>
       </mask>
       <g [attr.mask]="'url(#mask__sunset_' + size + '_' + square + ')'">
         <path [attr.fill]="'url(#gradient_paint0_linear_' + name + '_' + size + '_' + square + ')'" d="M0 0h80v40H0z" />
