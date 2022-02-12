@@ -5,7 +5,7 @@ Boring avatars is a tiny JavaScript Angular library that generates custom, SVG-b
 
 ![boring avatars preview](https://github.com/boringdesigners/boring-avatars/blob/master/public/boring-avatars-preview.png?raw=true)
 
-<a href="https://www.npmjs.com/package/boring-avatars">
+<a href="https://www.npmjs.com/package/ngx-boring-avatars">
 
 ![hi](https://badgen.net/npm/v/ngx-boring-avatars)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
