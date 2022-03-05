@@ -1,24 +1,39 @@
-# NgxBoringAvatars
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
+# Angular Boring Avatars
 
-## Code scaffolding
+Boring avatars is a tiny JavaScript Angular library that generates custom, SVG-based avatars from any username and color palette. This is the Angular Fork of the original [Library](https://www.npmjs.com/package/boring-avatars).
 
-Run `ng generate component component-name --project ngx-boring-avatars` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-boring-avatars`.
-> Note: Don't forget to add `--project ngx-boring-avatars` or else it will be added to the default project in your `angular.json` file. 
+![boring avatars preview](https://github.com/boringdesigners/boring-avatars/blob/master/public/boring-avatars-preview.png?raw=true)
 
-## Build
+<a href="https://www.npmjs.com/package/ngx-boring-avatars">
 
-Run `ng build ngx-boring-avatars` to build the project. The build artifacts will be stored in the `dist/` directory.
+![hi](https://badgen.net/npm/v/ngx-boring-avatars)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Publishing
+</a>
 
-After building your library with `ng build ngx-boring-avatars`, go to the dist folder `cd dist/ngx-boring-avatars` and run `npm publish`.
+## Install
 
-## Running unit tests
+```
+yarn add ngx-boring-avatars
+```
 
-Run `ng test ngx-boring-avatars` to execute the unit tests via [Karma](https://karma-runner.github.io).
+or
 
-## Further help
+```
+npm install ngx-boring-avatars
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Source
+
+You can embed your boring avatars using the original boring avatars source.
+
+To choose a random avatar from a specific user and a color palette, the format follows:
+
+```
+https://source.boringavatars.com/marble/120/Maria%20Mitchell?colors=264653,2a9d8f,e9c46a,f4a261,e76f51
+```
+![Avatar for Maria Mitchell](https://source.boringavatars.com/marble/120/Maria%20Mitchell?colors=264653,2a9d8f,e9c46a,f4a261,e76f51)
+
+
+For more information, [check out the README](https://github.com/hihayk/boring-avatars-service/blob/main/README.md)
