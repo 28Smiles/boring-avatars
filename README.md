@@ -29,7 +29,7 @@ or
 npm install ngx-boring-avatars
 ```
 
-## Source
+## Service
 
 You can embed your boring avatars using the original boring avatars source.
 
