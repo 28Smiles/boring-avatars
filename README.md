@@ -1,3 +1,8 @@
+[![Main](https://github.com/28Smiles/ngx-boring-avatars/actions/workflows/build.yml/badge.svg)](https://github.com/28Smiles/ngx-boring-avatars/actions/workflows/build.yml)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+[![Latest Stable](https://img.shields.io/github/v/release/28Smiles/ngx-boring-avatars?label=latest%20stable)](https://github.com/28Smiles/ngx-boring-avatars/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/28Smiles/ngx-boring-avatars?include_prereleases&label=latest%20release)](https://github.com/28Smiles/ngx-boring-avatars/releases)
+[![codecov](https://codecov.io/gh/28Smiles/ngx-boring-avatars/branch/master/graph/badge.svg?token=Td24qudkuq)](https://codecov.io/gh/28Smiles/ngx-boring-avatars)
 
 # Angular Boring Avatars
 
