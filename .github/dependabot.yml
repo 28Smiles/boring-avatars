@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/projects/example"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/projects/ngx-boring-avatars"
+    schedule:
+      interval: "daily"
