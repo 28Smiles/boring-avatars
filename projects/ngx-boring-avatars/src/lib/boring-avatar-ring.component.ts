@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from "@angular/core";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {getRandomColor, hashCode} from "./utilities";
 
 @Component({
@@ -42,7 +42,7 @@ import {getRandomColor, hashCode} from "./utilities";
   styles: [
   ]
 })
-export class BoringAvatarRingComponent implements OnInit {
+export class BoringAvatarRingComponent implements OnInit, OnChanges {
   @Input() name: string = "Default";
   @Input() size: number = 90;
   @Input() elements: number = 5;

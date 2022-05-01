@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from "@angular/core";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {getRandomColor, getUnit, hashCode} from "./utilities";
 
 interface MarbleAvatar {
@@ -66,7 +66,7 @@ interface MarbleAvatar {
   styles: [
   ]
 })
-export class BoringAvatarMarbleComponent implements OnInit {
+export class BoringAvatarMarbleComponent implements OnInit, OnChanges {
   @Input() name: string = "Default";
   @Input() size: number = 80;
   @Input() elements: number = 3;

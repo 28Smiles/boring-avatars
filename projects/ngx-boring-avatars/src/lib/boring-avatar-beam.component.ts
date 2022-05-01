@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, SimpleChanges} from "@angular/core";
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from "@angular/core";
 import {getBoolean, getContrast, getRandomColor, getUnit, hashCode} from "./utilities";
 
 interface BeamAvatar {
@@ -83,7 +83,7 @@ interface BeamAvatar {
   styles: [
   ]
 })
-export class BoringAvatarBeamComponent implements OnInit {
+export class BoringAvatarBeamComponent implements OnInit, OnChanges {
   @Input() name: string = "Default";
   @Input() size: number = 36;
   @Input() width: number = 80;
