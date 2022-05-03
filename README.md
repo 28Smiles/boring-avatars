@@ -1,5 +1,6 @@
+![hi](https://badgen.net/npm/v/ngx-boring-avatars)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Main](https://github.com/28Smiles/ngx-boring-avatars/actions/workflows/build.yml/badge.svg)](https://github.com/28Smiles/ngx-boring-avatars/actions/workflows/build.yml)
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Latest Stable](https://img.shields.io/github/v/release/28Smiles/ngx-boring-avatars?label=latest%20stable)](https://github.com/28Smiles/ngx-boring-avatars/releases/latest)
 [![Latest Release](https://img.shields.io/github/v/release/28Smiles/ngx-boring-avatars?include_prereleases&label=latest%20release)](https://github.com/28Smiles/ngx-boring-avatars/releases)
 [![codecov](https://codecov.io/gh/28Smiles/ngx-boring-avatars/branch/master/graph/badge.svg?token=Td24qudkuq)](https://codecov.io/gh/28Smiles/ngx-boring-avatars)
@@ -11,9 +12,6 @@ Boring avatars is a tiny JavaScript Angular library that generates custom, SVG-b
 ![boring avatars preview](https://github.com/boringdesigners/boring-avatars/blob/master/public/boring-avatars-preview.png?raw=true)
 
 <a href="https://www.npmjs.com/package/ngx-boring-avatars">
-
-![hi](https://badgen.net/npm/v/ngx-boring-avatars)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </a>
 
