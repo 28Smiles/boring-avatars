@@ -32,7 +32,7 @@
     "@types/react-dom": "^18.0.3",
     "boring-avatars": "^1.6.3",
     "jasmine-core": "~4.0.0",
-    "karma": "~6.3.19",
+    "karma": "~6.3.20",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-firefox-launcher": "^2.1.2",
